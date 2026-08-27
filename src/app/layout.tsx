@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
+import { assetPath } from "@/lib/catalog";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   title: "Óptica López | República Dominicana",
   description: "Descubre la óptica del futuro. Pruébate cientos de monturas con realidad aumentada.",
   icons: {
-    icon: "/logo-optica-lopez.jpeg"
+    icon: assetPath("/logo-optica-lopez.jpeg")
   }
 };
 
@@ -27,7 +28,7 @@ export default function RootLayout({
             <div className="flex justify-between items-center h-20">
               <Link href="/" className="flex items-center gap-3 group">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden border border-gray-200 group-hover:border-primary transition-colors bg-white">
-                  <Image src="/logo-optica-lopez.jpeg" alt="Óptica López Logo" fill className="object-cover" />
+                  <Image src={assetPath("/logo-optica-lopez.jpeg")} alt="Óptica López Logo" fill className="object-cover" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-xl font-bold tracking-tight text-gray-900">Óptica López</span>
@@ -61,7 +62,7 @@ export default function RootLayout({
             <div className="col-span-1 md:col-span-1 flex flex-col gap-4">
               <div className="flex items-center gap-3">
                 <div className="relative w-10 h-10 rounded-full overflow-hidden bg-white">
-                  <Image src="/logo-optica-lopez.jpeg" alt="Óptica López Logo" fill className="object-cover" />
+                  <Image src={assetPath("/logo-optica-lopez.jpeg")} alt="Óptica López Logo" fill className="object-cover" />
                 </div>
                 <span className="text-lg font-bold">Óptica López</span>
               </div>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CATALOG_ITEMS } from "@/lib/catalog";
+import { assetPath, CATALOG_ITEMS } from "@/lib/catalog";
 
 const getBrandFont = (brand: string) => {
   if (brand === "Louis Vuitton") return "font-serif tracking-normal text-gray-800";
@@ -70,7 +70,7 @@ export default function Home() {
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-[16px] z-20"></div>
               {/* Screen */}
               <div className="relative w-full h-full bg-gray-900 overflow-hidden">
-                <Image src="/glasses/g4.jpg" alt="AR App Mockup" fill className="object-cover opacity-90" />
+                <Image src={assetPath("/glasses/g4.jpg")} alt="AR App Mockup" fill className="object-cover opacity-90" />
                 
                 {/* Phone UI Overlay */}
                 <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent">

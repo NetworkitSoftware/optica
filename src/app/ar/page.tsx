@@ -4,7 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
-import { CATALOG_ITEMS, FITTINGBOX } from "@/lib/catalog";
+import { assetPath, CATALOG_ITEMS, FITTINGBOX } from "@/lib/catalog";
 
 /* FittingBox Virtual Try-On Advanced (FitMix). El widget corre dentro de su
    propio iframe: gestiona el permiso de cámara, el aviso de privacidad, el
@@ -213,7 +213,7 @@ function ARExperience() {
       <header className="relative z-10 w-full p-6 flex justify-between items-center bg-gradient-to-b from-black/80 to-transparent">
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-10 h-10 rounded-full overflow-hidden border border-white/20 group-hover:border-primary transition-colors bg-white">
-            <Image src="/logo-optica-lopez.jpeg" alt="Óptica López Logo" fill className="object-cover" />
+            <Image src={assetPath("/logo-optica-lopez.jpeg")} alt="Óptica López Logo" fill className="object-cover" />
           </div>
           <span className="font-bold tracking-tight text-white shadow-sm">Óptica López</span>
         </Link>
@@ -325,7 +325,7 @@ function ARExperience() {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-300">
           <div className="flex items-center gap-3">
             <div className="relative w-8 h-8 rounded-full overflow-hidden bg-white">
-              <Image src="/logo-optica-lopez.jpeg" alt="Óptica López Logo" fill className="object-cover" />
+              <Image src={assetPath("/logo-optica-lopez.jpeg")} alt="Óptica López Logo" fill className="object-cover" />
             </div>
             <span className="font-semibold">&copy; {new Date().getFullYear()} Óptica López.</span>
           </div>

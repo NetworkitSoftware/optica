@@ -13,6 +13,9 @@ export type CatalogItem = {
   gtin: string;
 };
 
+export const assetPath = (path: string) =>
+  `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+
 export const FITTINGBOX = {
   // Clave DEMO provista por FittingBox (FITTINGBOX.txt del POC Oviedo).
   // Para producción, solicitar clave a sales-cs@fittingbox.com y servir por HTTPS.
@@ -23,21 +26,21 @@ export const FITTINGBOX = {
 
 export const CATALOG_ITEMS: CatalogItem[] = [
   { id: 1, brand: "Louis Vuitton", name: "LV Clash Square", category: "sol", gtin: "8053672727708", images: [
-    "/glasses/g1.jpg", "/glasses/g2.jpg", "/glasses/g3.jpg"
+    assetPath("/glasses/g1.jpg"), assetPath("/glasses/g2.jpg"), assetPath("/glasses/g3.jpg")
   ]},
   { id: 2, brand: "Ray-Ban", name: "Aviator Classic", category: "sol", gtin: "8053672909258", images: [
-    "/glasses/g4.jpg", "/glasses/g1.jpg", "/glasses/g2.jpg"
+    assetPath("/glasses/g4.jpg"), assetPath("/glasses/g1.jpg"), assetPath("/glasses/g2.jpg")
   ]},
   { id: 3, brand: "Burberry", name: "BE4291 Rectangular", category: "sol", gtin: "3617064485260", images: [
-    "/glasses/g3.jpg", "/glasses/g4.jpg", "/glasses/g1.jpg"
+    assetPath("/glasses/g3.jpg"), assetPath("/glasses/g4.jpg"), assetPath("/glasses/g1.jpg")
   ]},
   { id: 4, brand: "Vera Wang", name: "VW514 Essential", category: "oftalmico", gtin: "716736368207", images: [
-    "/glasses/g2.jpg", "/glasses/g3.jpg", "/glasses/g4.jpg"
+    assetPath("/glasses/g2.jpg"), assetPath("/glasses/g3.jpg"), assetPath("/glasses/g4.jpg")
   ]},
   { id: 5, brand: "Ray-Ban", name: "Clubmaster Optics", category: "oftalmico", gtin: "8056597233958", images: [
-    "/glasses/g1.jpg", "/glasses/g3.jpg", "/glasses/g4.jpg"
+    assetPath("/glasses/g1.jpg"), assetPath("/glasses/g3.jpg"), assetPath("/glasses/g4.jpg")
   ]},
   { id: 6, brand: "Louis Vuitton", name: "LV Link Optical", category: "oftalmico", gtin: "716736989341", images: [
-    "/glasses/g4.jpg", "/glasses/g2.jpg", "/glasses/g1.jpg"
+    assetPath("/glasses/g4.jpg"), assetPath("/glasses/g2.jpg"), assetPath("/glasses/g1.jpg")
   ]},
 ];
